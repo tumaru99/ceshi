@@ -180,7 +180,8 @@ jobs:
 
       run: node index.js iqiyi --P00001=${P00001} --P00PRU=${P00PRU} --QC005=${QC005} --dfp=${dfp}
 
-    # 运行 unicom 签到任务
+
+# 运行 unicom 签到任务
 
     - name: Run unicom daily task
 
@@ -195,3 +196,52 @@ jobs:
         appid: ${{secrets.unicom_appid}}
 
       run: node index.js unicom --user=${user} --password=${password} --appid=${appid} ----TryRun
+
+    # 运行 unicom 签到任务
+
+    - name: Run unicom daily task
+
+      if: ${{ env.ENABLE_UNICOM }}
+
+      env:
+
+        user: ${{secrets.unicom_user2}}
+
+        password: ${{secrets.unicom_password}}
+
+        appid: ${{secrets.unicom_appid}}
+
+      run: node index.js unicom --user=${user} --password=${password} --appid=${appid} ----TryRun
+      
+          # 运行 unicom 签到任务
+
+    - name: Run unicom daily task
+
+      if: ${{ env.ENABLE_UNICOM }}
+
+      env:
+
+        user: ${{secrets.unicom_user3}}
+
+        password: ${{secrets.unicom_password}}
+
+        appid: ${{secrets.unicom_appid}}
+
+      run: node index.js unicom --user=${user} --password=${password} --appid=${appid} ----TryRun
+      
+          # 运行 unicom 签到任务
+
+    - name: Run unicom daily task
+
+      if: ${{ env.ENABLE_UNICOM }}
+
+      env:
+
+        user: ${{secrets.unicom_user4}}
+
+        password: ${{secrets.unicom_password2}}
+
+        appid: ${{secrets.unicom_appid}}
+
+      run: node index.js unicom --user=${user} --password=${password} --appid=${appid} ----TryRun
+      
